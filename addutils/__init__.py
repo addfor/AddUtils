@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-__version__ = '0.5.3'
+__version__ = '0.5.4'
 from pandas_addtut import side_by_side, side_by_side2
 from datagenerator import DataGenerator
 from css_style import css_notebook

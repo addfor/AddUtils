@@ -23,7 +23,7 @@
 import os
 
 import pandas as pd
-from pandas.io.data import DataReader
+from pandas_datareader.data import DataReader
 import numpy as np
 
 

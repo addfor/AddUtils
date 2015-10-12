@@ -71,5 +71,6 @@ if __name__ == "__main__":
     update_all()
     install_from_pip('fake-factory')
     install_from_pip('liac-arff')
+    install_from_pip('pandas-datareader')
     print _call_conda(['install', 'seaborn'])
     
