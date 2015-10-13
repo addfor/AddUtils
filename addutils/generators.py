@@ -23,9 +23,12 @@
 import os
 
 import pandas as pd
-from pandas_datareader.data import DataReader
 import numpy as np
 
+try:
+    from pandas_datareader.data import DataReader
+except ImportError:
+    pass
 
 WORK_DIRECTORY = 'work'
 DATA_DIRECTORY = 'example_data'
