@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from __future__ import print_function
+
 import numpy as np
 import multiprocessing
 from sklearn.metrics import mean_squared_error, accuracy_score

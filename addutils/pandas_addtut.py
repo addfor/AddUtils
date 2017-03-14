@@ -26,9 +26,9 @@ from IPython.core import display
 def side_by_side(*objs, **kwds):
     space = kwds.get('space', 4)
     reprs = [repr(obj).split('\n') for obj in objs]
-    print '-' * 40
-    print pd.core.common.adjoin(space, *reprs)
-    print '-' * 40
+    print('-' * 40)
+    print(pd.core.common.adjoin(space, *reprs))
+    print('-' * 40)
 
 def side_by_side2(*objs, **kwd):
     tables = [pd.DataFrame(df)._repr_html_() for df in objs]

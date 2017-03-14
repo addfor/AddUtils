@@ -77,7 +77,7 @@ def sample(channel, pos):
     return val_a + dx * (val_b - val_a)
 
 def sample_mpl_cmap(cmap, nsamples):
-    channels = map(list, [ cmap['red'], cmap['green'], cmap['blue'] ])
+    channels = list(map(list, [ cmap['red'], cmap['green'], cmap['blue'] ]))
     for chan in channels:
         # Sort stops by position
         chan.sort(key=lambda stop: stop[0])
@@ -86,7 +86,7 @@ def sample_mpl_cmap(cmap, nsamples):
     
     samples = []
     for pos in positions:
-        r, g, b = map(lambda chan: sample(chan, pos), channels)
+        r, g, b = [sample(chan, pos) for chan in channels]
         samples.append((r,g,b))
         
     return samples
@@ -101,14 +101,14 @@ def to_rgb_bytes(rgb):
     b = int(min(1, b) * 255)
     return (r,g,b)
 
-jet_rgb = map(to_rgb_bytes, jet)
-hot_rgb = map(to_rgb_bytes, hot)
+jet_rgb = list(map(to_rgb_bytes, jet))
+hot_rgb = list(map(to_rgb_bytes, hot))
 
 def to_hex(rgb):
     return "#%02x%02x%02x" % to_rgb_bytes(rgb)
 
-jet_hex = map(to_hex, jet)
-hot_hex = map(to_hex, hot)
+jet_hex = list(map(to_hex, jet))
+hot_hex = list(map(to_hex, hot))
 
 def linear_map(xs, palette, low=None, high=None):
     """Map (linearly) a sequence of real values to the given palette.

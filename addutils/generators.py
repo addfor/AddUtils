@@ -141,9 +141,9 @@ def p07_d2csv(location):
 
     def rands(n):
         choices = string.ascii_uppercase
-        return ''.join([random.choice(choices) for _ in xrange(n)])
+        return ''.join([random.choice(choices) for _ in range(n)])
 
-    tickers = np.array([rands(5) for _ in xrange(N)])
+    tickers = np.array([rands(5) for _ in range(N)])
 
     # Create a DataFrame containing 3 columns representing
     # hypothetical, but random portfolios for a subset of tickers:
@@ -173,9 +173,9 @@ def p07_portfolioh5(location):
 
     def rands(n):
         choices = string.ascii_uppercase
-        return ''.join([random.choice(choices) for _ in xrange(n)])
+        return ''.join([random.choice(choices) for _ in range(n)])
 
-    tickers = np.array([rands(5) for _ in xrange(N)])
+    tickers = np.array([rands(5) for _ in range(N)])
     fac1, fac2, fac3 = np.random.rand(3, 1000)
     ticker_subset = tickers.take(np.random.permutation(N)[:1000])
 

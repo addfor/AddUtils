@@ -48,9 +48,9 @@ def update_all(retry=10):
         if to_update:
             for package in to_update:
                 try:
-                    print _call_conda(['update', '-y', package])
+                    print(_call_conda(['update', '-y', package]))
                 except:
-                    print "Error updating %s, please try manually." % package 
+                    print("Error updating %s, please try manually." % package) 
                 i += 1
         else:
             return
@@ -63,8 +63,8 @@ def install_from_pip(distribution_name):
         r_set = command.run(opt, [distribution_name])
         r_set = command.run(opt, [distribution_name])
     except Exception as e:
-        print e
-        print "Error installing %s, please try manually" % distribution_name
+        print(e)
+        print("Error installing %s, please try manually" % distribution_name)
 
 
 if __name__ == "__main__":
@@ -72,5 +72,5 @@ if __name__ == "__main__":
     install_from_pip('fake-factory')
     install_from_pip('liac-arff')
     install_from_pip('pandas-datareader')
-    print _call_conda(['install', 'seaborn'])
+    print(_call_conda(['install', 'seaborn']))
     

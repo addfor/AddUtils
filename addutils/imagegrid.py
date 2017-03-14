@@ -24,7 +24,7 @@ import numpy as np
 import bokeh.plotting as bk
 from bokeh.models.ranges import Range1d
 
-import palette as pal
+from . import palette as pal
 
 
 def imagegrid(fig, images, grid_size=None, text=None,
@@ -54,7 +54,7 @@ def imagegrid(fig, images, grid_size=None, text=None,
     if isinstance(palette, list):
         if isinstance(palette[0], tuple) and len(palette[0]) == 3:
             # Avoid a bug in Bokeh that renders only the blue channel
-            palette = map(pal.to_hex, palette)
+            palette = list(map(pal.to_hex, palette))
 
     if grid_size is None:
         grid_size = (len(images), 1)
@@ -74,7 +74,7 @@ def imagegrid(fig, images, grid_size=None, text=None,
                            y=[ y-0.02 for y in ys ],
                            text=text, text_font_size='8pt')
         
-        for k in kwargs.keys():
+        for k in list(kwargs.keys()):
             if not k.startswith("text_"):
                 continue
             text_kwargs[k] = kwargs.pop(k)
@@ -109,7 +109,7 @@ def imagegrid_figure(*args, **kwargs):
     
     figure_args = dict()
 
-    for k in kwargs.keys():
+    for k in list(kwargs.keys()):
         if not k.startswith("figure_"):
             continue
         figure_args[k[7:]] = kwargs.pop(k)

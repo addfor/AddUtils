@@ -26,4 +26,4 @@ def read_txt(path, max_lines=5):
             if index == max_lines:
                 break
             else:
-                print line
+                print(line)
