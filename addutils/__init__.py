@@ -25,7 +25,7 @@ from .pandas_addtut import side_by_side, side_by_side2
 from .datagenerator import DataGenerator
 from .css_style import css_notebook
 from .generic import read_txt
-from . import update_conda
+#from . import update_conda
 from . import palette
 from . import importance
 # import imagegrid
